@@ -1,6 +1,11 @@
 // exporting modules
 console.log('exporting modules');
 
+// blocking code
+// console.log('START FETCHING');
+// await fetch(`https://jsonplaceholder.typicode.com/posts`);
+// console.log('FINISH FETCHING');
+
 // this is private variable, only can access inside this module
 const shippingCost = 10;
 export const cart = [];
@@ -21,4 +26,4 @@ export { totalPrice, totalQuantity as tq };
 export default function (product, quantity) {
   cart.push({ product, quantity });
   console.log(`${quantity} ${product} added to cart`);
-};
+}

@@ -1,3 +1,6 @@
+//////////////////////////////////////////////
+// EXPORTING & IMPORTING IN ES6 MODULES
+
 // importing modules
 // always put import modules at the top of the file
 // this is strict by default, because it's modules
@@ -16,10 +19,42 @@ console.log(ShoppingCart.totalPrice);
 
 // import add, { addToCart, totalPrice as price, tq } from './shoppingCart.js';
 // console.log(price);
-import add, {cart} from './shoppingCart.js';
+import add, { cart } from './shoppingCart.js';
 add('pizza', 90);
 add('bread', 39);
 add('spagetti', 30);
 
 // modules with export & import have life connection
-console.log(cart)
+console.log(cart);
+
+//////////////////////////////////////////////
+// TOP LEVEL AWAIT ES2022
+
+// console.log('START FETCHING');
+// // top level await
+// // await can work without async function, but it only inside module
+// const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+// const data = await res.json();
+// console.log(data)
+// console.log('SOMETHING');
+
+// real world example top level await
+const getLastPost = async function () {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
+  const data = await res.json();
+  console.log(data);
+
+  return { title: data.at(-1).title, text: data.at(-1).body };
+};
+
+const lastPost = getLastPost();
+console.log(lastPost);
+
+// not very clean
+// lastPost.then(last => console.log(last))
+
+// not inside async function, but inside module (we can access it) = top level await
+const lastPost2 = await getLastPost();
+console.log(lastPost2)
+
+// top level await (without async function), will blocking execution code
