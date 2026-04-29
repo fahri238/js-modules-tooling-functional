@@ -98,9 +98,11 @@
 
 // Export
 exports.addToCart = function (product, quantity) {
-    cart.push({ product, quantity });
-    console.log(`${quantity} ${product} added to cart (shipping cost ${shippingCost})`);
+  cart.push({ product, quantity });
+  console.log(
+    `${quantity} ${product} added to cart (shipping cost ${shippingCost})`,
+  );
 };
 
 // import
-const {addToCart} = require('./shoppingCart.js');
+const { addToCart } = require('./shoppingCart.js');
