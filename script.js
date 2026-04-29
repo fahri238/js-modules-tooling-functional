@@ -63,32 +63,44 @@
 // THE MODULES PATTERN
 
 // IFEE, Immediately invoked function expression
-const ShoppingCart2 = (function () {
-  const cart = [];
-  const shippingCost = 10;
-  const totalPrize = 237;
-  const totalQuantity = 23;
+// const ShoppingCart2 = (function () {
+//   const cart = [];
+//   const shippingCost = 10;
+//   const totalPrize = 237;
+//   const totalQuantity = 23;
 
-  const addToCart = function (product, quantity) {
-    cart.push({ product, quantity });
-    console.log(`${quantity} ${product} added to cart (shipping cost ${shippingCost})`);
-  };
+//   const addToCart = function (product, quantity) {
+//     cart.push({ product, quantity });
+//     console.log(`${quantity} ${product} added to cart (shipping cost ${shippingCost})`);
+//   };
 
-  const orderStock = function (product, quantity) {
-    console.log(`${quantity} ${product} ordered from supplier`);
-  };
+//   const orderStock = function (product, quantity) {
+//     console.log(`${quantity} ${product} ordered from supplier`);
+//   };
 
-  return {
-    addToCart,
-    cart,
-    totalPrize,
-    totalQuantity,
-  };
-})();
+//   return {
+//     addToCart,
+//     cart,
+//     totalPrize,
+//     totalQuantity,
+//   };
+// })();
 
 // closure : we can acces the variable throug the function where the variable declared
 // we cant acces the variable directly, but we can change it through the it's function
-ShoppingCart2.addToCart('pizza', 20)
-ShoppingCart2.addToCart('apple', 27)
+// ShoppingCart2.addToCart('pizza', 20)
+// ShoppingCart2.addToCart('apple', 27)
 
-console.log(ShoppingCart2.shippingCost)
+// console.log(ShoppingCart2.shippingCost)
+
+////////////////////////////////////////////////////////
+// COMMON JS MODULE
+
+// Export
+exports.addToCart = function (product, quantity) {
+    cart.push({ product, quantity });
+    console.log(`${quantity} ${product} added to cart (shipping cost ${shippingCost})`);
+};
+
+// import
+const {addToCart} = require('./shoppingCart.js');
