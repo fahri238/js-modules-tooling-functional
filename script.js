@@ -132,3 +132,23 @@ console.log(statusDeepClone);
 if (module.hot) {
   module.hot.accept();
 }
+
+class Person {
+  greeting = 'hey';
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.greeting}, ${name}`);
+  }
+}
+
+const fahri = new Person('Fahri');
+
+console.log('fahri' ?? null);
+
+console.log(cart.find(product => product.quantity > 20));
+
+// import 'core-js/stable';
+// import 'core-js/stable/array/find';
+
+// polyfiling async function
+import 'regenerator-runtime/runtime.js';
