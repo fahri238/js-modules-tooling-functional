@@ -1,2 +1,4 @@
-# Ignore a heavy file/folder
+# Ignore a recreatable folders
 node_modules/
+dist/
+.parcel-cache/

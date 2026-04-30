@@ -2,9 +2,9 @@
   "name": "modules-tooling-functional",
   "version": "1.0.0",
   "description": "![JavaScript](https://img.shields.io/badge/javascript-ES6%2B-yellow?style=for-the-badge&logo=javascript)\r ![NPM](https://img.shields.io/badge/npm-package_manager-red?style=for-the-badge&logo=npm)\r ![Parcel](https://img.shields.io/badge/parcel-bundler-blueviolet?style=for-the-badge)\r ![Babel](https://img.shields.io/badge/babel-transpiler-orange?style=for-the-badge&logo=babel)",
-  "main": "clean.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "dependencies": {
     "leaflet": "^1.9.4",
     "lodash-es": "^4.18.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
   }
 }
